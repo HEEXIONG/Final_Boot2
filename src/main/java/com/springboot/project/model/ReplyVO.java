@@ -52,6 +52,7 @@ public class ReplyVO {
 	//글번호 참조키
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JsonIgnore
+	@JoinColumn(name = "qno")
 	private QnaVO qno;
 }
 
