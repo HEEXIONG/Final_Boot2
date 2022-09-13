@@ -7,7 +7,7 @@ import com.springboot.project.model.ReplyVO;
 public interface ReplyService {
 
 	
-	public void enrollReply(ReplyVO vo);
+	public void save(ReplyVO vo);
 	
 	
 	

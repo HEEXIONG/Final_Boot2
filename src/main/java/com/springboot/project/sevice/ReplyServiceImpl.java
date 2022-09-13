@@ -19,11 +19,16 @@ public class ReplyServiceImpl implements ReplyService{
 	private ReplyRepository replyRepository;
 
 	@Override
-	public void enrollReply(ReplyVO vo) {
+	public void save(ReplyVO vo) {
 		
 		replyRepository.save(vo);
 		
 	}
+
+	
+	
+	
+	
 	
 
 	

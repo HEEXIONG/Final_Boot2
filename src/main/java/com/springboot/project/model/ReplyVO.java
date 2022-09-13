@@ -1,3 +1,4 @@
+
 package com.springboot.project.model;
 
 import java.util.Date;
@@ -16,13 +17,17 @@ import javax.persistence.Table;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 
 @Entity
 @Data
 @Table(name = "tbl_reply")
 @EntityListeners(AuditingEntityListener.class)
+@EqualsAndHashCode(of = "rno")
 public class ReplyVO {
 
 	
@@ -31,10 +36,6 @@ public class ReplyVO {
 	@Column(name = "rno")
 	private Long rno;
 	
-	//글번호 참조키
-	@ManyToOne
-	@JoinColumn(name = "qno")
-	private QnaVO qno;
 	
 	@Column(name = "reply")
 	private String reply;
@@ -48,4 +49,12 @@ public class ReplyVO {
 	@CreatedDate
 	private Date updateDate;
 	
+	//글번호 참조키
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnore
+	private QnaVO qna;
 }
+
+
+
+
