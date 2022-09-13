@@ -52,7 +52,7 @@ public class ReplyVO {
 	//글번호 참조키
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JsonIgnore
-	private QnaVO qna;
+	private QnaVO qno;
 }
 
 

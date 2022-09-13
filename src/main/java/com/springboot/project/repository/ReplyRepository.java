@@ -14,7 +14,7 @@ import com.springboot.project.model.ReplyVO;
 
 public interface ReplyRepository extends JpaRepository<ReplyVO, Long>{
 
-	 @Query("SELECT r FROM ReplyVO r WHERE r.qna = ?1 AND r.rno > 0 ORDER BY r.rno ASC ")
-	public List<ReplyVO> getReplyiesofQna(QnaVO qna);
+	 @Query("SELECT r FROM ReplyVO r WHERE r.qno = ?1 AND r.rno > 0 ORDER BY r.rno ASC ")
+	public List<ReplyVO> getReplyiesofQna(QnaVO qno);
 
 }

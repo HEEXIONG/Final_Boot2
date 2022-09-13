@@ -48,10 +48,10 @@
             </div>
             <div class="card-body">
                 <div class="form-group">
-                    <textarea class="form-control" id="newReply" name="content"></textarea>
+                    <textarea class="form-control" id="newReply" name="reply"></textarea>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" id="writer" type="text" name="writer" placeholder="작성자 이름을 입력해주세요">
+                    <input class="form-control" id="writer" type="text" name="replyer" placeholder="작성자 이름을 입력해주세요">
                 </div>
             </div>
             <div class="card-footer">
@@ -125,6 +125,7 @@ var replyManager = (function () {
             contentType : "application/json",
             success:callback
         });
+        console.log(obj);
     };
 
     var modify = function (obj, callback) {
@@ -161,22 +162,25 @@ var replyManager = (function () {
 </script>
 <script type="text/javascript">
 //댓글 추가
-var articleNo = [[${qna.qno}]];
+var qno = ${get.qno};
+console.log(qno);
 var replyContentObj = $("textarea[name='reply']");
+console.log(replyContentObj);
 var replyWriterObj = $("input[name='replyer']");
-
+console.log(replyWriterObj);
 // 댓글 추가 처리
 $("#replyAddBtn").click(function () {
     if (confirm("댓글을 저장 하시겠습니까")) {
-        var content = replyContentObj.val();
-        var writer = replyWriterObj.val();
-        var obj = {content: reply, writer: replyer, articleNo: qno};
+        var reply = replyContentObj.val();
+        var replyer = replyWriterObj.val();
+        var obj = {reply: reply, replyer: replyer, qno: qno};
 
         replyManager.add(obj, function (list) {
             printList(list);
             alert("새로운 댓글이 추가되었습니다.");
             $("#newReply").summernote("code", "");
             replyWriterObj.val("");
+            
         });
     }
 });

@@ -52,7 +52,7 @@ public class ReplyController {
 		
 		QnaVO qna = new QnaVO();
 		qna.setQno(qno);
-		reply.setQna(qna);
+		reply.setQno(qna);
 		replyRepository.save(reply);
 		
 		return new ResponseEntity<>(getReplyiesofQna(qna), HttpStatus.CREATED);
@@ -70,13 +70,9 @@ public class ReplyController {
 	}
 
 	//댓글목록
-		private List<ReplyVO> getReplyiesofQna(QnaVO qna) throws RuntimeException{
-			log.info("getReplyiesofQna () called...");
-			return replyRepository.getReplyiesofQna(qna);
-		}
-		
+	private List<ReplyVO> getReplyiesofQna(QnaVO qna) throws RuntimeException{
+		log.info("getReplyiesofQna () called...");
+		return replyRepository.getReplyiesofQna(qna);
+	}
 }
-
-
-
 
