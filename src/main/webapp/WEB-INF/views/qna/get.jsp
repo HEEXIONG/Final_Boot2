@@ -87,7 +87,7 @@
 
                     </div>
                     <div class="form-group">
-                        <input class="form-control" id="replyNo" type="hidden" name="replyNo" value=""/>
+                        <input class="form-control" id="rno"  name="rno" value=""/>
                     </div>
                     <div class="form-group btnArea">
 
@@ -161,6 +161,75 @@ var replyManager = (function () {
 })();
 </script>
 <script type="text/javascript">
+//댓글 목록
+
+$(document).ready(function(e) {
+	
+	$("#newReply").click(function(){
+		placeholder : "댓글을 입력해 주세요"
+		
+	});
+	
+	(function() {
+		replyManager.getAll(${get.qno}, printList);
+	})();
+	
+	function printList(list){
+		var str = "";
+		var replyObj;
+		for (var i = 0; i < list.length; i++){
+			replyObj = list[i];
+			str += "<div class=\"card reply\">\n" +
+            "            <div class=\"card-header\">\n" +
+            "                <div class=\"row\">\n" +
+            "                    <div class=\"col col-6\">\n" +
+            "                        <a href=\"#\"><i class=\"fa fa-user\"></i> " + replyObj.replyer + "</a>\n" +
+            "                    </div>\n" +
+            "                    <div class=\"col col-6\">\n" +
+            "                        <div class=\"btn-group float-right\">\n" +
+            "                            <button class=\"btn btn-secondary btn-sm dropdown-toggle\" type=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n" +
+            "                                <i class=\"fa fa-cog\"></i>\n" +
+            "                            </button>\n" +
+            "                            <div class=\"dropdown-menu\">\n" +
+            "                                <a class=\"dropdown-item\" id=\"replyModBtn\" href=\"#\"><i class=\"fa fa-edit\"></i> 수정</a>\n" +
+            "                                <a class=\"dropdown-item\" id=\"replyDelBtn\" href=\"#\"><i class=\"fa fa-trash\"></i> 삭제</a>\n" +
+            "                            </div>\n" +
+            "                        </div>\n" +
+            "                    </div>\n" +
+            "                </div>\n" +
+            "            </div>\n" +
+            "            <div class=\"card-body\">\n" +
+            "                <div class=\"form-group contentBody\">\n" + replyObj.reply +
+            "                </div>\n" +
+            "                <div class=\"form-group\">\n" +
+            "                    <input class=\"form-control\" id=\"rno\" type=\"hidden\" name=\"rno\" value=\"" +replyObj.rno + "\"/>\n" +
+            "                </div>\n" +
+            "                <div class=\"form-group btnArea\">\n" +
+            "                </div>\n" +
+            "            </div>\n" +
+            "            <div class=\"card-footer\">\n" +
+            "                <div class=\"small text-muted\">\n" +
+            "                    <span class=\"float-right\"><i class=\"far fa-clock\"></i> " + formatDate(replyObj.replyDate) + " </span>\n" +
+            "                </div>\n" +
+            "            </div>\n" +
+            "        </div>" +
+            "        <hr/>";
+		}
+		$("#replies").html(str);
+	}
+	
+	function formatDate(timeValue) {
+		var date = new Date(timeValue);
+		return date.getFullYear()
+		+ "-" + (date.getMonth() + 1 >= 10 ? date.getMonth() + 1 : '0' + (date.getMonth() + 1))
+        + "-" + date.getDate()
+        + " " + date.getHours()
+        + ":" + date.getMinutes();
+	}
+
+
+
+
 //댓글 추가
 var qno = ${get.qno};
 console.log(qno);
@@ -178,12 +247,83 @@ $("#replyAddBtn").click(function () {
         replyManager.add(obj, function (list) {
             printList(list);
             alert("새로운 댓글이 추가되었습니다.");
-            $("#newReply").summernote("code", "");
+           /*  $("#newReply").summernote("code", ""); */
             replyWriterObj.val("");
             
         });
     }
 });
+
+//댓글 수정
+$(document).on("click","#replyModBtn",function(event){
+	event.preventDefault();
+	console.log("수정 수정~~~");
+	
+	var thisReply = $(this).parents(".reply");
+	var contentBody = thisReply.find(".contentBody");
+	var btnArea = thisReply.find(".btnArea");
+	
+	
+	var buttonStr = "<div class=\"btn-group buttons\" role=\"group\">\n" +
+    "    <button type=\"button\" class=\"btn btn-secondary\" id=\"saveBtn\">저장</button>\n" +
+    "    <button type=\"button\" class=\"btn btn-secondary\" id=\"cancelBtn\">취소</button>\n" +
+    "</div>";
+btnArea.html(buttonStr);
+	
+});
+
+
+$(document).on("click","#saveBtn", function (event) {
+	if(confirm("댓글을 수정하시겠습니까?")){
+		var thisReply = $(this).parents(".reply");
+		var contentBody = thisReply.find(".contentBody");
+		var rno = thisReply.find("#rno").val();
+		var obj = {reply: reply, qno: qno, rno: rno};
+		
+		replyManager.modify(obj, function(list){
+			printList(list);
+			alert("댓글이 수정되었습니다.");
+			
+		});
+		
+	}
+});
+
+//댓글 수정 취소
+$(document).on("click", "#cancelBtn", function(event) {
+	if(confirm("댓글 수정을 취소하시겠습니까?")){
+		replyManager.getAll(${get.qno}, printList);
+	}
+
+});
+
+//댓글 삭제
+$(document).on("click", "#replyDelBtn", function(event) {
+	event.preventDefault();
+	if(confirm("댓글을 삭제하시겠습니까?")){
+		var thisReply = $(this).parents(".reply");
+		var rno = thisReply.find("#rno").val();
+		var obj  = {qno : qno, rno : rno};
+		replyManager.remove(obj, function (list) {
+			printList(list);
+			
+			alert("댓글이 삭제 되었습니다");
+			
+		});
+	}
+	
+});
+
+
+
+
+});
+
+
+
+
+
+
 </script>
 
 
