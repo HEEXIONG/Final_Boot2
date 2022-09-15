@@ -1,38 +1,33 @@
 package com.springboot.project.model;
 
-import java.util.Date;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "authorities")
+@Table(name = "USER_PROFILE")
 @EntityListeners(AuditingEntityListener.class)
-public class Authorities {
+public class UserProfile {
+	
+	@Column(name = "fileName")
+	private String fileName;
 	
 	
+	@Column(name = "uploadPath")
+	private String uploadPath;
 	
-	@Column(name = "USERID")
-	private String USERID;
-	
-	
-	@Column(name = "AUTH")
-	private String AUTH;
-	
+	@Column(name = "uuid")
+	private String uuid;
 	
 	@Id
 	@Column(name = "USER_NO")
 	private Long id;
+
 }

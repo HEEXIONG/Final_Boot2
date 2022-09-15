@@ -1,12 +1,16 @@
 package com.springboot.project.model;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EntityListeners;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.springframework.data.annotation.CreatedDate;
@@ -24,7 +28,7 @@ public class Users {
 	@Id
 	@GeneratedValue
 	@Column(name = "USER_NO")
-	private Long USERNO;
+	private Long id;
 	
 	@Column(name = "USER_ID")
 	private String USERID;
@@ -55,6 +59,7 @@ public class Users {
 	
 	@Column(name = "ENABLED")
 	private String ENABLED;
+	
 	
 	
 	

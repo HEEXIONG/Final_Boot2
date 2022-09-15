@@ -9,6 +9,7 @@
 <meta charset="UTF-8">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -37,13 +38,17 @@
 			<th>아이디</th>
 			<th>이메일</th>
 			<th>가입일</th>
+			<td>상세조회</td>
+			<td>탈퇴</td>
 		</tr>
 		<c:forEach items="${ulist.content}" var="user">
 			<tr>
-				<td>${user.USERNO}</td>
-				<td>${user.USERID}</a></td>
+				<td>${user.id}</td>
+				<td>${user.USERID}</td>
 				<td>${user.USER_EMAIL}</td>
 				<td>${user.USER_REGDATE}</td>
+				<td> <a href='/users/detail?id=<c:out value="${user.id}"/>'>이동 </a>  </td>
+				<td> <a  onclick="return confirm('정말로 탈퇴시키겠습니까?');" href="/users/list/${user.id}">탈퇴</a>   </td>
 			</tr>
 		</c:forEach>
 	</table>
