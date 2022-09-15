@@ -20,7 +20,7 @@
 
 <style>
 body {
-	  padding-top: 70px;
+	  padding-top: 100px;
 	  padding-bottom: 30px;
 }
 </style>
@@ -77,8 +77,8 @@ body {
 					<!-- <form:hidden path="bid" id="bid" /> -->
 					<div class="row">
 						<div class="col-sm-10">
-							<textarea name="reply" id="content" class="form-control"
-								rows="3" placeholder="댓글을 입력해 주세요"></textarea>
+							<textarea name="reply" id="content" class="form-control" rows="3"
+								placeholder="댓글을 입력해 주세요"></textarea>
 						</div>
 						<div class="col-sm-2">
 							<input name="replyer" class="form-control" id="reg_id"
@@ -96,18 +96,19 @@ body {
 
 			<!-- Reply List {s}-->
 			<div class="reply">
-			<div class="my-3 p-3 bg-white rounded shadow-sm"
-				style="padding-top: 10px" >
-				<h6 class="border-bottom pb-2 mb-0">댓글</h6>
-				<div id="replyList"></div>
-			<!-- 댓글번호 -->
-            
-               <input class="form-control" id="rno"  name="rno" type="hidden" value=""/>
-			
+				<div class="my-3 p-3 bg-white rounded shadow-sm"
+					style="padding-top: 10px">
+					<h6 class="border-bottom pb-2 mb-0">댓글</h6>
+					<div id="replyList"></div>
+					<!-- 댓글번호 -->
+
+					<input class="form-control" id="rno" name="rno" type="hidden"
+						value="" />
+
+				</div>
 			</div>
-			</div>
-            
-            
+
+
 			 
 			<!-- Reply List {e}-->
 
@@ -254,8 +255,72 @@ $(document).on("click", "#replyDelBtn", function(event){
 });
 
 
+//댓글수정
+
+$(document).on("click", "#replyModBtn", function(event) {
+	event.preventDefault();
+	console.log("수정수정");
+		
+	
+	var thisReply = $(this).parents(".reply");
+	var btnArea = thisReply.find(".reply");
+	var htmls = "";
+	htmls += 
+	'<div class="reply">'+
+	'<div class="media text-muted pt-3" id="rno' + rno + '" >'+
+	'<svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder:32x32">'+
+	'<title>Placeholder</title>'+
+	'<image href="/resources/img/icon.png" width = 100% height =100%></image>'+
+	
+	'</svg>'+
+	'<p class="media-body pb-3 mb-0 small lh-125 border-bottom horder-gray">'+
+	'<span class="d-block">'+
+	'<strong class="text-gray-dark">' + reg_id + '</strong>'+ 
+	'<span style="padding-left: 7px; font-size: 9pt">'+
+	'<a href="javascript:void(0)" id = "saveBtn" style="padding-right:5px">저장</a>'+
+	'<a href="javascript:void(0)" onClick="history.go()">취소<a>'+
+	'</span>'+
+	'</span>'+
+	'<textarea name="editContent" id="editContent" class="form-control" rows="3">'+
+	content +
+	'</textarea>'+
+	'</p>'+
+	'</div>'+
+	'<input class="form-control" id="rno"  name="rno" type="hidden" value="' + rno + '" />' +
+	'</div>'; 
+	btnArea.html(htmls);
+	
+})
+
+
+
+	$(document).on("click", "#saveBtn", function(event) {
+		if(confirm("댓글을 수정하시겠습니까?")){
+			var thisReply = $(this).parents(".reply");
+			var rno = thisReply.find("#rno").val();
+			var obj = {reply: reply, qno: qno, rno: rno};
+			
+			replyManager.modify(obj, function(list){
+				printList(list);
+				alert("댓글이 수정되었습니다.");
+				
+			});
+		}
+		
+	})
+
+	
+	
 	
 });
+
+
+
+
+
+
+	
+
 
 
 
