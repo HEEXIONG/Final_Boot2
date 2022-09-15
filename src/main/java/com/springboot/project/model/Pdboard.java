@@ -17,24 +17,26 @@ import lombok.Data;
 @Entity
 public class Pdboard {
 
-	@Id	// PK 설정
+	@Id // PK 설정
 	@GeneratedValue
 	@Column(name = "PD_CODE")
 	private Long pdcode;
-	
+
 	@Column(name = "PD_TITLE")
 	private String title;
-	
+
 	@Column(updatable = false, name = "ADMIN")
 	private String admin;
 
 	@Column(name = "PD_CONTENT")
 	private String content;
-	
+
 	@Column(insertable = false, updatable = false, columnDefinition = "date default sysdate")
 	private Date regdate;
-	
+
 	@Column(name = "PRICE")
 	private Long price;
+
+
 
 }

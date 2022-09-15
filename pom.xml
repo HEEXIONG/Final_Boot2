@@ -24,12 +24,6 @@
 		  <artifactId>spring-security-taglibs</artifactId>
 		</dependency>
 	
-	
-	
-	
-	
-	
-	
 	<!-- jsp테스트를위해 주석처리함  -->
  <dependency>
             <groupId>org.apache.tomcat.embed</groupId>

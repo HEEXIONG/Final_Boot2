@@ -63,6 +63,7 @@ public class Pdcontroller {
      * @param Pdboard
      * @return
      */
+    
     @RequestMapping("/insertBoard")
     public String insertBoard(Pdboard pdboard) {
         pdService.insertpdBoard(pdboard);
