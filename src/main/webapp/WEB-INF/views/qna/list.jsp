@@ -12,12 +12,22 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<style>
+body {
+padding-top: 70px;
+padding-bottom: 30px;
+
+}
+</style>
+
 </head>
 <body>
 	
 	<div class="page-wrapper">
     <div class="container-fluid">
-        <div class="col-lg-8"><!--게시판 넓이 -->
+      <!--   <div class="col-lg-8"> --><!--게시판 넓이 -->
+        
             <div class="col-lg-12">
                 <h1 class="page-header">Q&A 게시판</h1>
             </div>
@@ -57,12 +67,11 @@
                          </c:forEach>   
                         </tbody>
                     </table>
-                    
-	
-	
-	
-	
-	
+				</div>
+			</div>
+		<!-- </div> -->
+	</div>
+</div>
 	
 	
 	
