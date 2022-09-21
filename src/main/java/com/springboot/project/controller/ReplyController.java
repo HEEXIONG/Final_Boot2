@@ -68,8 +68,6 @@ public class ReplyController {
 		QnaVO qna = new QnaVO();
 		qna.setQno(qno);
 		return new ResponseEntity<>(getReplyiesofQna(qna), HttpStatus.OK);
-		
-		
 	}
 
 	//댓글목록
