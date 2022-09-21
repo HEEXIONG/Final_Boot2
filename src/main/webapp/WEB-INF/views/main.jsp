@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,6 +10,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>관리자 페이지</title>
+        
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets1/favicon.ico" />
         <!-- Bootstrap Icons-->
@@ -19,18 +22,20 @@
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css1/styles.css" rel="stylesheet" />
+    
     </head>
     <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#page-top">Elesco Admin</a>
+                <a class="navbar-brand" href="#page-top" onclick="location.href='/main'">Elesco Admin</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#about">상품등록</a></li>
                         <li class="nav-item"><a class="nav-link" href="#services">공지사항</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Q&A</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio" onclick="location.href='qna/list'">Q&A</a></li>
+                        
                         <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
                     </ul>
                 </div>
@@ -45,7 +50,7 @@
                         <hr class="divider" />
                     </div>
                     <div class="col-lg-8 align-self-baseline">
-                        <p class="text-white-75 mb-5">로그인 후 이용해주시기 바랍니다.</p>
+                        <p class="text-white-75 mb-5">Elesco 관리자 페이지 입니다. 로그인 후 이용해주시기 바랍니다.</p>
                         <a class="btn btn-primary btn-xl" href="#about">Login</a>
                     </div>
                 </div>
