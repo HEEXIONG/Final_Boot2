@@ -12,7 +12,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
+ 
 <style>
 body {
 padding-top: 70px;
@@ -20,14 +20,16 @@ padding-bottom: 30px;
 
 }
 </style>
-
+ 
 </head>
+
 <body>
 	
 	<div class="page-wrapper">
     <div class="container-fluid">
       <!--   <div class="col-lg-8"> --><!--게시판 넓이 -->
-        
+        <div class="col-lg-8" style="float: none; margin:0 auto;">
+	<a onclick="location.href='/main'" style="color: black">Elesco Admin</a>
             <div class="col-lg-12">
                 <h1 class="page-header">Q&A 게시판</h1>
             </div>
@@ -69,11 +71,26 @@ padding-bottom: 30px;
                     </table>
 				</div>
 			</div>
+		</div>
 		<!-- </div> -->
 	</div>
 </div>
 	
-	
+	 <!-- Footer-->
+        <footer class="bg-light py-5">
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2022 - Elesco</div></div>
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js1/scripts.js"></script>
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <!-- * *                               SB Forms JS                               * *-->
+        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 	
 </body>
 </html>

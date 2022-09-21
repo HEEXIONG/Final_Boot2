@@ -82,7 +82,7 @@ body {
 						</div>
 						<div class="col-sm-2">
 							<input name="replyer" class="form-control" id="reg_id"
-								placeholder="관리자"></input>
+								placeholder=" "></input>
 
 							<button type="button" class="btn btn-sm btn-primary"
 								id="btnReplySave" style="width: 100%; margin-top: 10px">
