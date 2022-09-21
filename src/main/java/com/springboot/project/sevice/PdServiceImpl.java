@@ -1,12 +1,12 @@
 package com.springboot.project.sevice;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.springboot.project.model.Pdboard;
 import com.springboot.project.repository.PdRepository;
-
-import java.util.List;
 
 @Service
 public class PdServiceImpl implements PdService {
@@ -71,7 +71,5 @@ public class PdServiceImpl implements PdService {
     public void deletepdBoard(Pdboard pdboard) {
         boardRepository.deleteById(pdboard.getPdcode());
     }
-
-    
 
 }
