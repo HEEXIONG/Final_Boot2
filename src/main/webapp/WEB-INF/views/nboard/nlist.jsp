@@ -12,7 +12,7 @@
 <body>
 <div class="row" align="center">
 	<div class="col-lg-12">
-		<h1 class="page-header" onclick="location.href='list'">공지사항</h1>
+		<h1 class="page-header" onclick="location.href='list'">공지 사항</h1>
 	</div>
 	<!-- /.col-lg-12 -->
 </div>
@@ -44,43 +44,9 @@
 						</tr>
 					</c:forEach>
 				</table>
-				<div class="row" align="center">
-					<div class="col-lg-12 form-group">
-						<form id="searchForm" action="list" method="get">
-							<select name="type" class="form-select" id="exampleSelect1">
-								<option value="" <c:out value="${pageMaker.cri.type == null ? 'selected' : '' }"/>>--</option>
-								<option value="T" <c:out value="${pageMaker.cri.type eq 'T' ? 'selected' : '' }"/>>글 제목</option>
-								<option value="W" <c:out value="${pageMaker.cri.type eq 'W' ? 'selected' : '' }"/>>작성자</option>
-								<option value="TW" <c:out value="${pageMaker.cri.type eq 'TW' ? 'selected' : '' }"/>>글 제목 or 작성자</option>
-							</select>
-							<input type="text" class="form-control" id="inputDefault" name="keyword" value="<c:out value = "${pageMaker.cri.keyword}"/>" />						
-							<input type="hidden" name="pageNum" value="<c:out value = "${pageMaker.cri.pageNum}"/>" />
-							<input type="hidden" name="amount" value="<c:out value = "${pageMaker.cri.amount}"/>" />
-							<button class="btn btn-primary">Search Now!</button>
-						</form>
-					</div>
-				</div>
-				<button id='regBtn' type="button" class="btn btn-xs pull-right" onclick="location.href='register'">Register New Board</button>
-				<div class='btn-toolbar' role="toolbar" aria-label="Toolbar with button groups" align="center">
-					<div class="btn-group me-2" role="group">
-						<ul class="pagination">
-							<c:if test="${pageMaker.prev}">
-								<li class="paginate_button page-item previous"><a
-									class="page-link" href="${pageMaker.startPage -1}">Previous</a></li>
-							</c:if>
-							<c:forEach var="num" begin="${pageMaker.startPage}"
-								end="${pageMaker.endPage}">
-								<li class="paginate_button page-item ${pageMaker.cri.pageNum == num ? "active" : ""} ">
-									<a class="page-link" href="${num}">${num}</a>
-								</li>
-							</c:forEach>
-							<c:if test="${pageMaker.next}">
-								<li class="paginate_button page-item next"><a
-									class="page-link" href="${pageMaker.endPage +1 }">Next</a></li>
-							</c:if>
-						</ul>
-					</div>
-				</div>
+				
+				<button id='regBtn' type="button" class="btn btn-outline-light" onclick="location.href='register'">글 작성</button>
+				
 			</div>
 			
 			<form id='actionForm' action="list" method='get'>

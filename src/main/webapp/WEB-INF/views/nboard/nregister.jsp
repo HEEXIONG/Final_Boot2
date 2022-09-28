@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link href="/resources/css/bootstrap.css" rel="stylesheet" />
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -15,15 +16,15 @@
 <form action="registerNBoard" method="post">
     <table style="width: 700px; margin: auto">
         <tr>
-            <td width="70" style="background-color: dodgerblue; color: cornsilk">제목</td>
+            <td style="color: black;">제목</td>
             <td><input type="text" name="ntitle"/></td>
         </tr>
         <tr>
-            <td style="background-color: dodgerblue; color: cornsilk">작성자</td>
-            <td><input type="text" name="nwriter" value='<sec:authentication property="principal.nickname"/>' /></td>
+            <td style="color: black;">작성자</td>
+            <td><input type="text" name="nwriter" readonly="readonly" value='<sec:authentication property="principal.nickname"/>' /></td>
         </tr>
         <tr>
-            <td style="background-color: dodgerblue; color: cornsilk">내용</td>
+            <td style="color: black;">내용</td>
             <td><textarea name="ncontent" cols="40" rows="10"></textarea></td>
         </tr>
         <tr>
