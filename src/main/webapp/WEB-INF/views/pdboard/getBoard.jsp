@@ -17,14 +17,14 @@
 	rel="stylesheet">
 
 <!-- Stylesheets -->
-<link rel="stylesheet" href="static/css/bootstrap.min.css" />
-<link rel="stylesheet" href="static/css/font-awesome.min.css" />
-<link rel="stylesheet" href="static/css/owl.carousel.min.css" />
-<link rel="stylesheet" href="static/css/flaticon.css" />
-<link rel="stylesheet" href="static/css/slicknav.min.css" />
+<link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/static/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/static/css/owl.carousel.min.css" />
+<link rel="stylesheet" href="/static/css/flaticon.css" />
+<link rel="stylesheet" href="/static/css/slicknav.min.css" />
 
 <!-- Main Stylesheets -->
-<link rel="stylesheet" href="static/css/style.css" />
+<link rel="stylesheet" href="/static/css/style.css" />
 
 <!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -90,7 +90,7 @@
 				<div class="col-md-6">
 								<button type="submit" class="site-btn btn btn-primary" value="수정">상품 수정하기</button>
 				</form>
-					<button colspan="2" onclick="location.href='pdboard/getBoardList'" class="site-btn" style="margin-top: 20px;">상품 목록으로 돌아가기</button>
+					<button colspan="2" onclick="location.href='getBoardList'" class="site-btn" style="margin-top: 20px;">상품 목록으로 돌아가기</button>
 					<button onclick="location.href='deleteBoard?pdcode=${pdread.pdcode}'" class="site-btn" style="margin-top: 20px;">상품 삭제하기</button>
 				</div>
 			</div>
@@ -99,11 +99,11 @@
 	</section>
 
 	<!--====== Javascripts & Jquery ======-->
-	<script src="static/js/jquery-3.2.1.min.js"></script>
-	<script src="static/js/bootstrap.min.js"></script>
-	<script src="static/js/jquery.slicknav.min.js"></script>
-	<script src="static/js/owl.carousel.min.js"></script>
-	<script src="static/js/jquery-ui.min.js"></script>
-	<script src="static/js/main.js"></script>
+	<script src="/static/js/jquery-3.2.1.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/jquery.slicknav.min.js"></script>
+	<script src="/static/js/owl.carousel.min.js"></script>
+	<script src="/static/js/jquery-ui.min.js"></script>
+	<script src="/static/js/main.js"></script>
 </body>
 </html>

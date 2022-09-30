@@ -123,7 +123,7 @@ public class Pdcontroller {
         
         mFileService.fileInsertBoard(file);		//물품 이미지 등록
 		}
-    	return "redirect:pdboard/getBoardList";
+    	return "redirect:getBoardList";
     }
     
     /**
@@ -143,7 +143,7 @@ public class Pdcontroller {
     @RequestMapping("pdboard/updateBoard")
 	public String updateBoard(Pdboard pdboard) {
         pdService.updatepdBoard(pdboard);
-        return "forward:pdboard/getBoardList";
+        return "forward:getBoardList";
     }
     
     /**
@@ -154,7 +154,7 @@ public class Pdcontroller {
     public String deletepdBoard(Pdboard pdboard,FileVO filevo){
     	pdService.deletepdBoard(pdboard);
     	mFileService.fileDeleteBoard(filevo);
-        return "forward:pdboard/getBoardList";
+        return "forward:getBoardList";
     }
     
     @PostMapping("pdboard/deleteFile")

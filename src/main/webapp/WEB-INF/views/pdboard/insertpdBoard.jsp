@@ -16,15 +16,14 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap" rel="stylesheet">
 
 <!-- Stylesheets -->
-<link rel="stylesheet" href="static/css/bootstrap.min.css" />
-<link rel="stylesheet" href="static/css/font-awesome.min.css" />
-<link rel="stylesheet" href="static/css/owl.carousel.min.css" />
-<link rel="stylesheet" href="static/css/flaticon.css" />
-<link rel="stylesheet" href="static/css/slicknav.min.css" />
+<link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/static/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/static/css/owl.carousel.min.css" />
+<link rel="stylesheet" href="/static/css/flaticon.css" />
+<link rel="stylesheet" href="/static/css/slicknav.min.css" />
 
 <!-- Main Stylesheets -->
-<link rel="stylesheet" href="static/css/style.css" />
-
+<link rel="stylesheet" href="/static/css/style.css" />
 
 <!--[if lt IE 9]>
 		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -107,12 +106,12 @@
 	</section>
 
 	<!--====== Javascripts & Jquery ======-->
-	<script src="static/js/jquery-3.2.1.min.js"></script>
-	<script src="static/js/bootstrap.min.js"></script>
-	<script src="static/js/jquery.slicknav.min.js"></script>
-	<script src="static/js/owl.carousel.min.js"></script>
-	<script src="static/js/jquery-ui.min.js"></script>
-	<script src="static/js/main.js"></script>
+	<script src="/static/js/jquery-3.2.1.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/jquery.slicknav.min.js"></script>
+	<script src="/static/js/owl.carousel.min.js"></script>
+	<script src="/static/js/jquery-ui.min.js"></script>
+	<script src="/static/js/main.js"></script>
 
 <script type="text/javascript">
  function readImage(input) {
