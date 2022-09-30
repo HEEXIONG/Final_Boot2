@@ -3,7 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -12,7 +12,7 @@
         <title>관리자 페이지</title>
         
         <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets1/favicon.ico" />
+        <link rel="icon" type="image/x-icon" href="static/assets1/favicon.ico" />
         <!-- Bootstrap Icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
         <!-- Google fonts-->
@@ -21,7 +21,7 @@
         <!-- SimpleLightbox plugin CSS-->
         <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css1/styles.css" rel="stylesheet" />
+        <link href="static/css/styles.css" rel="stylesheet" />
     
     </head>
     <body id="page-top">
@@ -32,8 +32,8 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                        <li class="nav-item"><a class="nav-link" href="#about" onclick="location.href='pdboard/pdlist'">상품등록</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services">공지사항</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about" onclick="location.href='pdboard/getBoardList'">상품등록</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services" >공지사항</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio" onclick="location.href='qna/list'">Q&A</a></li>
                         
                         <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
@@ -66,7 +66,7 @@
         <!-- SimpleLightbox plugin JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <!-- Core theme JS-->
-        <script src="js1/scripts.js"></script>
+        <script src="static/js/scripts.js"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->

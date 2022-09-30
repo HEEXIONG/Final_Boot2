@@ -50,7 +50,7 @@ public class Pdcontroller {
 		return new ResponseEntity<>(mFileService.getfileList(filevo), HttpStatus.OK);
 	}
         
-    @RequestMapping("/getBoardList")
+    @RequestMapping("pdboard/getBoardList")
     public String getpdBoardList(Model model, Pdboard pdboard,FileVO filevo){
     	List<Pdboard> pdlist = pdService.getpdBoardList(pdboard);
     	List<FileVO> filelist = mFileService.getfileList(filevo);
@@ -63,13 +63,13 @@ public class Pdcontroller {
      * 글쓰기 화면
      * @return
      */
-    @RequestMapping("/insertBoardView")
+    @RequestMapping("pdboard/insertBoardView")
     public String insertBoardView() {
         return "pdboard/insertpdBoard";
     }
     
 	@ResponseBody
-	@GetMapping("/display")
+	@GetMapping("pdboard/display")
 	public ResponseEntity<byte[]> getFile(String fileName){
 		
 		File file = new File("C:\\SPRINGBOOT_STUDY\\Final_Boot2-master\\src\\main\\resources\\static\\Upload\\Upload" + fileName);
@@ -91,7 +91,7 @@ public class Pdcontroller {
      * @param Pdboard
      * @return
      */
-    @RequestMapping("/insertBoard")
+    @RequestMapping("pdboard/insertBoard")
     public String insertBoard(HttpServletRequest request,Pdboard pdboard,@RequestPart MultipartFile files) throws Exception{
        
     	FileVO file = new FileVO();
@@ -123,13 +123,13 @@ public class Pdcontroller {
         
         mFileService.fileInsertBoard(file);		//물품 이미지 등록
 		}
-    	return "redirect:/getBoardList";
+    	return "redirect:pdboard/getBoardList";
     }
     
     /**
             상세 글 보기
      */
-    @RequestMapping("/getBoard")
+    @RequestMapping("pdboard/getBoard")
     public String getpdBoard(Pdboard pdboard, Model model,FileVO filevo){
     	model.addAttribute("filelist", mFileService.getfileBoard(filevo));
     	model.addAttribute("pdread", pdService.getpdBoard(pdboard));
@@ -140,24 +140,24 @@ public class Pdcontroller {
      * 글 수정 처리 후 목록으로 이동
      */
     
-    @RequestMapping("/updateBoard")
+    @RequestMapping("pdboard/updateBoard")
 	public String updateBoard(Pdboard pdboard) {
         pdService.updatepdBoard(pdboard);
-        return "forward:/getBoardList";
+        return "forward:pdboard/getBoardList";
     }
     
     /**
      * 글 삭제 처리 후 목록으로 이동
      * @param Pdboard
      */
-    @RequestMapping("/deleteBoard")
+    @RequestMapping("pdboard/deleteBoard")
     public String deletepdBoard(Pdboard pdboard,FileVO filevo){
     	pdService.deletepdBoard(pdboard);
     	mFileService.fileDeleteBoard(filevo);
-        return "forward:/getBoardList";
+        return "forward:pdboard/getBoardList";
     }
     
-    @PostMapping("/deleteFile")
+    @PostMapping("pdboard/deleteFile")
 	@ResponseBody
 	// Page548 deleteFile()은 브라우저에서 전송하는 파일 이름과 종류를 파라미터로 받아서
 	// 파일의 종류에 따라 다르게 동작합니다. 

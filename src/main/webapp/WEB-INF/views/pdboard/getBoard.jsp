@@ -90,7 +90,7 @@
 				<div class="col-md-6">
 								<button type="submit" class="site-btn btn btn-primary" value="수정">상품 수정하기</button>
 				</form>
-					<button colspan="2" onclick="location.href='getBoardList'" class="site-btn" style="margin-top: 20px;">상품 목록으로 돌아가기</button>
+					<button colspan="2" onclick="location.href='pdboard/getBoardList'" class="site-btn" style="margin-top: 20px;">상품 목록으로 돌아가기</button>
 					<button onclick="location.href='deleteBoard?pdcode=${pdread.pdcode}'" class="site-btn" style="margin-top: 20px;">상품 삭제하기</button>
 				</div>
 			</div>
