@@ -10,7 +10,6 @@ import com.springboot.project.model.Pdboard;
 @Service("com.springboot.project.service.PdService")
 public interface PdService {
 
-	
 	 List<Pdboard> getpdBoardList(Pdboard pdboard);
 
 	    void insertpdBoard(Pdboard pdboard);

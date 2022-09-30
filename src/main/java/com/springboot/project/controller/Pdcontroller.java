@@ -55,7 +55,6 @@ public class Pdcontroller {
     @RequestMapping("/getBoardList")
     public String getpdBoardList(Model model, Pdboard pdboard){
         List<Pdboard> pdlist = pdService.getpdBoardList(pdboard);
-        
         model.addAttribute("pdlist", pdlist);
         return "getBoardList";
     }
@@ -90,8 +89,7 @@ public class Pdcontroller {
         String sourceFileNameExtension = FilenameUtils.getExtension(sourceFileName).toLowerCase();
         File destinationFile;
         String destinationFileName;
-        
-        String fileUrl = "C:\\SPRINGBOOT_STUDY\\Final_Boot2-master\\src\\main\\resources\\static\\uploadFiles\\uploadFiles";
+        String fileUrl = "C:\\Upload\\Upload";
         
         do {
         	destinationFileName = RandomStringUtils.randomAlphanumeric(32) + "." + sourceFileNameExtension;
