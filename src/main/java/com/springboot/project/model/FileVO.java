@@ -3,7 +3,9 @@ package com.springboot.project.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import lombok.Data;
@@ -13,21 +15,20 @@ import lombok.Data;
 @Entity
 public class FileVO {
 	
-	@Id	// PK 설정
-	@GeneratedValue
-	@Column(name = "fno")
-	private int fno;
+	@Id
+	@Column(name="PD_CODE", unique = true, nullable = false)
+	private Long pdcode;
 	
-	@Column(name = "pd_code")
-	private Long pd_code;
-	
-	@Column(name = "fileName")
+	@Column(name = "FILENAME")
 	private String fileName;
 	
-	@Column(name = "fileOriName")
+	@Column(name = "FILEORINAME")
 	private String fileOriName;
 	
-	@Column(name = "uploadPath")
+	@Column(name = "UPLOADPATH")
 	private String uploadPath;
+
+	@Column(name = "FILEFULLNAME")
+	private String FileFullName;
 	
 }

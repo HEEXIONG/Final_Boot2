@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -18,14 +19,14 @@ import lombok.Data;
 public class Pdboard {
 
 	@Id	// PK 설정
-	@GeneratedValue
-	@Column(name = "PD_CODE")
+	@GeneratedValue(strategy=GenerationType.SEQUENCE)
+	@Column(name="PD_CODE", unique = true, nullable = false)
 	private Long pdcode;
 	
 	@Column(name = "PD_TITLE")
 	private String title;
 	
-	@Column(updatable = false, name = "ADMIN")
+	@Column(name = "ADMIN")
 	private String admin;
 
 	@Column(name = "PD_CONTENT")
@@ -36,5 +37,12 @@ public class Pdboard {
 	
 	@Column(name = "PRICE")
 	private Long price;
+	
+	@Column(name = "FILENAME")
+	private String filename;
+
+	@Column(name = "amount")
+	private String amount;
+	
 
 }

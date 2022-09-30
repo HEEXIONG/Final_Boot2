@@ -58,7 +58,7 @@ public class PdServiceImpl implements PdService {
         findBoard.setAdmin(pdboard.getAdmin());
         findBoard.setContent(pdboard.getContent());
         findBoard.setPrice(pdboard.getPrice());
-
+        findBoard.setAmount(pdboard.getAmount());
         // DB에 저장
         boardRepository.save(findBoard);
     }
@@ -70,6 +70,6 @@ public class PdServiceImpl implements PdService {
     @Override
     public void deletepdBoard(Pdboard pdboard) {
         boardRepository.deleteById(pdboard.getPdcode());
-    }
-
+        }
+    
 }
