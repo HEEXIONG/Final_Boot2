@@ -104,7 +104,7 @@ public class Pdcontroller {
 			File destinationFile;
 			String destinationFileName;
 			String FileFullName;
-			String fileUrl = "C:\\SPRINGBOOT_STUDY\\Final_Boot2-master\\src\\main\\resources\\static\\Upload\\Upload";
+			String fileUrl = "C:\\Users\\hi-guro\\git\\Final_Boot2\\src\\main\\resources\\static\\Upload\\Upload";
         do {
         	destinationFileName = RandomStringUtils.randomAlphanumeric(32) + "." + fileNameExtension;
         	destinationFile = new File(fileUrl + destinationFileName);
