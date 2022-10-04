@@ -36,7 +36,7 @@
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                      <sec:authorize access="isAuthenticated()">
                         <li class="nav-item"><a class="nav-link" href="#about" onclick="location.href='pdboard/getBoardList'">상품등록</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#services" >공지사항</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services" onclick="location.href='/board/list'">공지사항</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio" onclick="location.href='qna/list'">Q&A</a></li>
                         <!-- <li class="nav-item"><a class="nav-link" href="#portfolio" onclick="location.href='users/list'">회원관리</a></li> -->
                         </sec:authorize>
