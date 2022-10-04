@@ -23,7 +23,7 @@ public class IndexController {
 	
 	@GetMapping({"","/"})
 	public String index() {
-		return "index"; 
+		return "main"; 
 	}
 	@GetMapping("/user")
 	public @ResponseBody String user() {
