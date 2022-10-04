@@ -31,7 +31,9 @@
             </div>
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
         </form>
-     
+       <div class="btn-area">
+                <button id="btn" type="button" onclick="location.href='joinForm'">회원가입</button>
+            </div>
      
     </section>
 

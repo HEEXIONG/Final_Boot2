@@ -1,5 +1,5 @@
 <%@page contentType="text/html; charset=UTF-8" %>
-<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>글상세보기</title>
@@ -57,6 +57,7 @@
                 </td>
             </tr>
         </table>
+				<tr><img alt="" src ="${pageContext.request.contextPath}/resources/uploadFiles/uploadFiles9zaZiV6mSvY2UXnOTRh4MlO6We950Oxx.jpg" /></tr>
     </form>
     <hr>
     <a href="insertBoardView">글등록</a>
