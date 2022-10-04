@@ -38,7 +38,7 @@
                         <li class="nav-item"><a class="nav-link" href="#about" onclick="location.href='pdboard/getBoardList'">상품등록</a></li>
                         <li class="nav-item"><a class="nav-link" href="#services" >공지사항</a></li>
                         <li class="nav-item"><a class="nav-link" href="#portfolio" onclick="location.href='qna/list'">Q&A</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio" onclick="location.href='users/list'">회원관리</a></li>
+                        <!-- <li class="nav-item"><a class="nav-link" href="#portfolio" onclick="location.href='users/list'">회원관리</a></li> -->
                         </sec:authorize>
                         
                         <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
