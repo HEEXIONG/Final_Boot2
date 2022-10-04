@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link href="/resources/css/bootstrap.css" rel="stylesheet" />
+<link href="/static/resources/css/bootstrap.css" rel="stylesheet" />
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
